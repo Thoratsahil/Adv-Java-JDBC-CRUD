@@ -19,11 +19,26 @@ public class StudentDao {
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc-crud","root",null);
 			String sql="insert into student(sname,saddress,spercentage) values (?,?,?)";
             pst= con.prepareStatement(sql);
+            pst.setString(1, s.getSname());
+			pst.setString(2, s.getSaddress());
+			pst.setDouble(3, s.getSpercentage());
+			
+			check=pst.executeUpdate();
+			
 
 
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
+		}
+        finally {
+			try {
+				pst.close();
+				con.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		
 		return check;
