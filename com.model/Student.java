@@ -1,5 +1,5 @@
 
-
+package com.model;
 public class Student {
 	
 	private int sid;

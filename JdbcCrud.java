@@ -1,7 +1,19 @@
+import com.dao.StudentDao;
+import com.model.Student;
+
 public class JdbcCrud 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        StudentDao sd=new StudentDao();
+       Student s=new Student();
+       s.setSname("sayalii");
+       s.setSaddress("sangli");
+       s.setSpercentage(88.22);
+       
+       if(sd.insertstudent(s)>0)
+       {
+    	   System.out.println("inserted successfully");
+       }
     }
 }
