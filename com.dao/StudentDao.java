@@ -8,7 +8,7 @@ import com.model.Student;
 
 public class StudentDao {
 	
-	public int insertstudent(Student s)
+	public int insertstudent(Student s)//for insert operation 
 	{
 		int check=0;
 		Connection con=null;
