@@ -7,6 +7,7 @@ public class JdbcCrud
     {
         StudentDao sd=new StudentDao();
        Student s=new Student();
+       /* 
        s.setSname("sayalii");
        s.setSaddress("sangli");
        s.setSpercentage(88.22);
@@ -14,6 +15,12 @@ public class JdbcCrud
        if(sd.insertstudent(s)>0)
        {
     	   System.out.println("inserted successfully");
+       }
+       */
+
+       if(sd.deletestudentbysid(3)>0)
+       {
+    	   System.out.println("deleted successfully");
        }
     }
 }

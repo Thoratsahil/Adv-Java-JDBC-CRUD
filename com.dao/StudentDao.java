@@ -44,4 +44,37 @@ public class StudentDao {
 		return check;
 	}
 
+
+	public int deletestudentbysid(int sid)  //deleteStudentbySidDeleteMethod
+	{
+		int check = 0; 
+		Connection con=null;
+		PreparedStatement pst=null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc-crud","root",null);
+			String sql="delete from student where sid=?";
+			pst=con.prepareStatement(sql);
+			pst.setInt(1, sid);
+			check=pst.executeUpdate();
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				pst.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		return check;
+	}
 }
