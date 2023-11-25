@@ -18,9 +18,10 @@ public class JdbcCrud
        }
        */
 
-       if(sd.deletestudentbysid(3)>0)
+       if(sd.deletestudentbysid(3)>0)  //delete student by sid
        {
     	   System.out.println("deleted successfully");
        }
+
     }
 }
