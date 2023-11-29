@@ -80,6 +80,19 @@ public class StudentDao {
 
 	public Student findstudentbyid(int sid)
 	{
+		Student s=null;
+		Connection con=null;
 		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc-crud","root",null);
+			String sql="select sid,sname,saddress,spercentage from student where sid=?";
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return s;
 	}
 }
