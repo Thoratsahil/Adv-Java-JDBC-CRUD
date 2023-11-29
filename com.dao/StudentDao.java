@@ -3,6 +3,7 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.model.Student;
 
@@ -83,6 +84,7 @@ public class StudentDao {
 		Student s=null;
 		Connection con=null;
 		PreparedStatement pst=null;
+		ResultSet rs=null;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -90,7 +92,15 @@ public class StudentDao {
 			String sql="select sid,sname,saddress,spercentage from student where sid=?";
 			pst=con.prepareStatement(sql);
 			pst.setInt(1, sid);
-			pst.executeQuery();
+			rs=pst.executeQuery();
+			while(rs.next())
+			{
+				s =new Student();
+				s.setSid((int)rs.getObject("sid"));
+				s.setSname((String)rs.getObject("sname"));
+				s.setSaddress((String)rs.getObject("saddress"));
+				s.setSpercentage((double)rs.getObject("sid"));
+			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
