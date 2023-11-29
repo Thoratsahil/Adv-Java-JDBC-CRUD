@@ -99,7 +99,7 @@ public class StudentDao {
 				s.setSid((int)rs.getObject("sid"));
 				s.setSname((String)rs.getObject("sname"));
 				s.setSaddress((String)rs.getObject("saddress"));
-				s.setSpercentage((double)rs.getObject("sid"));
+				s.setSpercentage((double)rs.getObject("spercentage"));
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
