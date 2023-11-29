@@ -28,6 +28,11 @@ public class JdbcCrud
 
        Student s=sd.findstudentbyid(1); //for find student by id
        System.out.println(s);
+
+       /* Student s=sd.findstudentbyid(2); //for uodate the student
+       System.out.println(s);
+       s.setSaddress("sangli");
+       System.out.println(sd.updatestudent(s));*/
     }
 
     }
