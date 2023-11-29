@@ -77,4 +77,9 @@ public class StudentDao {
 		
 		return check;
 	}
+
+	public Student findstudentbyid(int sid)
+	{
+		
+	}
 }
