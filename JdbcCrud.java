@@ -32,7 +32,7 @@ public class JdbcCrud
        /* Student s=sd.findstudentbyid(2); //for uodate the student
        System.out.println(s);
        s.setSaddress("sangli");
-       System.out.println(sd.updatestudent(s));*/
+       System.out.println(sd.updatestudent(s));*/ //updateStudent method 
     }
 
     }
